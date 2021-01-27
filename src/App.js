@@ -2,6 +2,8 @@ import { Component } from 'react';
 
 import './App.css';
 
+import TVShowsContainer from './TVShowsContainer';
+
 const tvShowsURL = 'https://api.tvmaze.com/shows';
 
 class App extends Component {
@@ -17,8 +19,11 @@ class App extends Component {
   }
   
   render() {
+    const { tvShows } = this.state;
+
     return (
       <div className="App">
+        <TVShowsContainer tvShows={ tvShows } />
       </div>
     );
   }
