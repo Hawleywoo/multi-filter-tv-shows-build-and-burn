@@ -1,3 +1,19 @@
+.filters {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.search-by-name-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label[for="search-name"] {
+  margin-bottom: 0.4rem;
+  font-weight: 900;
+}
+
 .tv-shows-container {
   display: flex;
   flex-wrap: wrap;

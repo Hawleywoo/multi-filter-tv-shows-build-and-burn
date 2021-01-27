@@ -4,7 +4,7 @@ const TVShowsContainer = ({ tvShows }) => {
   
   const displayTVShows = () => {
     return tvShows.map(tvShow => {
-      return <TVShowCard tvShow={ tvShow } />
+      return <TVShowCard key={ tvShow.id } tvShow={ tvShow } />
     })
   }
   

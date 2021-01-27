@@ -2,7 +2,14 @@ const TVShowCard = ({ tvShow }) => {
 
   const displayGenres = () => {
     return tvShow.genres.map(genre => {
-      return <li className="tv-show-genre">{ genre }</li>
+      return (
+        <li
+          key={ genre }
+          className="tv-show-genre"
+        >
+          { genre }
+        </li>
+      )
     })
   }
 
