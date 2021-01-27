@@ -1,17 +1,47 @@
 .filters {
   padding: 1rem;
   margin: 1rem;
+  display: flex;
 }
 
 .search-by-name-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-right: 1rem;
 }
 
 label[for="search-name"] {
   margin-bottom: 0.4rem;
   font-weight: 900;
+}
+
+.sort-by-popularity-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 1rem;
+}
+
+label[for="sort-by-popularity"] {
+  margin-bottom: 0.4rem;
+  font-weight: 900;
+}
+
+.filter-by-rating-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 1rem;
+}
+
+label[for="filter-rating"] {
+  margin-bottom: 0.4rem;
+  font-weight: 900;
+}
+
+#filter-rating {
+  width: 50px;
 }
 
 .tv-shows-container {
