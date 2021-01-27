@@ -1,0 +1,33 @@
+.tv-shows-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tv-show-card {
+  padding: 0.8rem;
+  margin: 0.7rem;
+  width: 250px;
+}
+
+.tv-show-image,
+.tv-show-title,
+.tv-show-genres,
+.tv-show-premiered,
+.tv-show-rating {
+  margin-bottom: 0.4rem;
+}
+
+.tv-show-title {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.tv-show-genres {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.tv-show-genre {
+  padding-right: 0.7rem;
+}
