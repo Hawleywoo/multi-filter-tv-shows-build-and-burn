@@ -11,7 +11,8 @@ class App extends Component {
 
   state = {
     tvShows: [],
-    name: ''
+    name: '',
+    popularity: 'most popular'
   }
 
   componentDidMount() {
@@ -25,28 +26,40 @@ class App extends Component {
     this.setState({ [name]: value });
   }
 
-  filteredShows = () => {
-    const { tvShows, name } = this.state;
-
-    return tvShows.filter(tvShow => {
-      return tvShow.name
-        .toLowerCase()
-        .includes(
-          name.toLowerCase()
-        );
-    });
+  byPopularity = (a, b) => {
+      if (a.weight < b.weight) {
+        return 1
+      } else if (a.weight > b.weight) {
+        return -1
+      } else {
+        return 0
+      }
   }
-  
+
+  filteredShows = () => {
+    const { tvShows, name, popularity } = this.state;
+
+    return tvShows.sort(this.byPopularity())
+    // return tvShows.filter(tvShow => {
+    //   return tvShow.name
+    //     .toLowerCase()
+    //     .includes(
+    //       name.toLowerCase()
+    //     );
+    // });
+  }
+
   render() {
-    const { name } = this.state;
+    const { name, popularity } = this.state;
 
     return (
       <div className="App">
         <Filters
-          name={ name }
-          handleChange={ this.handleChange }
+          name={name}
+          popularity={popularity}
+          handleChange={this.handleChange}
         />
-        <TVShowsContainer tvShows={ this.filteredShows() } />
+        <TVShowsContainer tvShows={this.filteredShows()} />
       </div>
     );
   }

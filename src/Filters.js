@@ -1,4 +1,4 @@
-const Filters = ({ name, handleChange }) => {
+const Filters = ({ name, popularity, handleChange }) => {
 
   return (
     <section className="filters">
@@ -11,6 +11,18 @@ const Filters = ({ name, handleChange }) => {
           placeholder="search by name"
           onChange={ handleChange }
         />
+      </div>
+      <div className="sort-by-popularity-group">
+        <label htmlFor="sot-by-popularity">Sort by popularity</label>
+        <select
+          name="popularity"
+          value={ popularity }
+          id="sort-by-popularity"
+          onChange={ handleChange }
+        >
+          <option value='most popular' >Most Popular</option>
+          <option value='least popular'>Least Popular</option>
+        </select>
       </div>
     </section>
   )
