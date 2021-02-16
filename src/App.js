@@ -27,26 +27,39 @@ class App extends Component {
   }
 
   byPopularity = (a, b) => {
+    const { popularity } = this.state
+
+    if(popularity === 'least popular'){
       if (a.weight < b.weight) {
-        return 1
-      } else if (a.weight > b.weight) {
         return -1
+      } else if (a.weight > b.weight) {
+        return 1
       } else {
         return 0
       }
+    }
+
+    if (a.weight < b.weight) {
+      return 1
+    } else if (a.weight > b.weight) {
+      return -1
+    } else {
+      return 0
+    }
   }
 
   filteredShows = () => {
     const { tvShows, name, popularity } = this.state;
 
-    return tvShows.sort(this.byPopularity())
-    // return tvShows.filter(tvShow => {
-    //   return tvShow.name
-    //     .toLowerCase()
-    //     .includes(
-    //       name.toLowerCase()
-    //     );
-    // });
+    // return tvShows.sort(this.byPopularity())
+    const filteredShows =  tvShows.filter(tvShow => {
+      return tvShow.name
+        .toLowerCase()
+        .includes(
+          name.toLowerCase()
+        );
+    });
+    return filteredShows.sort(this.byPopularity())
   }
 
   render() {
